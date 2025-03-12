@@ -146,9 +146,6 @@ export class BarVerticalComponent extends BaseChartComponent {
   dataLabelMaxHeight: any = { negative: 0, positive: 0 };
 
   update(): void {
-    // Filter out zero-value entries from results
-    this.results = this.results.filter(item => item.value !== 0);
-
     super.update();
 
     if (!this.showDataLabel) {
