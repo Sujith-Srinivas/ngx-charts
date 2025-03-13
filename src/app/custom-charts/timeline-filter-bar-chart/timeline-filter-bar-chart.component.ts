@@ -254,47 +254,47 @@ export class TimelineFilterBarChartComponent extends BaseChartComponent {
     this.update();
   }
 
-  addBrush(): void {
-    if (this.brush) return;
+  // addBrush(): void {
+  //   if (this.brush) return;
 
-    const height = this.height;
-    const width = this.width;
+  //   const height = this.height;
+  //   const width = this.width;
 
-    this.brush = brushX()
-      .extent([
-        [0, 0],
-        [width, height]
-      ])
-      .on('brush end', ({ selection }) => {
-        const newSelection = selection || this.xScale.range();
-        const newDomain = newSelection.map(this.timeScale.invert);
+  //   this.brush = brushX()
+  //     .extent([
+  //       [0, 0],
+  //       [width, height]
+  //     ])
+  //     .on('brush end', ({ selection }) => {
+  //       const newSelection = selection || this.xScale.range();
+  //       const newDomain = newSelection.map(this.timeScale.invert);
 
-        this.onFilter.emit(newDomain);
-        this.cd.markForCheck();
-      });
+  //       this.onFilter.emit(newDomain);
+  //       this.cd.markForCheck();
+  //     });
 
-    select(this.chartElement.nativeElement).select('.brush').call(this.brush);
-  }
+  //   select(this.chartElement.nativeElement).select('.brush').call(this.brush);
+  // }
 
-  updateBrush(): void {
-    if (!this.brush) return;
+//   updateBrush(): void {
+//     if (!this.brush) return;
 
-    const height = this.dims.height;
-    const width = this.dims.width;
+//     const height = this.dims.height;
+//     const width = this.dims.width;
 
-    this.brush.extent([
-      [0, 0],
-      [width, height]
-    ]);
-    select(this.chartElement.nativeElement).select('.brush').call(this.brush);
+//     this.brush.extent([
+//       [0, 0],
+//       [width, height]
+//     ]);
+//     select(this.chartElement.nativeElement).select('.brush').call(this.brush);
 
-    // clear hardcoded properties so they can be defined by CSS
-    select(this.chartElement.nativeElement)
-      .select('.selection')
-      .attr('fill', undefined)
-      .attr('stroke', undefined)
-      .attr('fill-opacity', undefined);
+//     // clear hardcoded properties so they can be defined by CSS
+//     select(this.chartElement.nativeElement)
+//       .select('.selection')
+//       .attr('fill', undefined)
+//       .attr('stroke', undefined)
+//       .attr('fill-opacity', undefined);
 
-    this.cd.markForCheck();
-  }
-}
+//     this.cd.markForCheck();
+//   }
+// }
