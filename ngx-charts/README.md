@@ -1,1 +1,1 @@
-testing
+A basic introduction to ngx-charts with installation and usage instructions
